@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import EmployeeService from "../services/EmployeeService";
+import { Link } from "react-router-dom";
 
 export default class ListEmployeeComponent extends Component {
   constructor(props) {
@@ -7,17 +8,25 @@ export default class ListEmployeeComponent extends Component {
     this.state = {
       employees: [],
     };
+    this.addEmploye = this.addEmploye.bind(this);
   }
   componentDidMount() {
     EmployeeService.getEmployees().then((res) => {
       this.setState({ employees: res.data });
     });
   }
+  addEmploye = () => {
+   "/addEmployees";
+  };
   render() {
     return (
       <div>
         <h2 className="text-center">Employee List</h2>
         <div className="row">
+        <Link to="/addEmployees">
+          <button className="btn btn-primary"  onClick={this.addEmploye}>
+            Add Employee
+          </button></Link>
           <table className="table table-striped table-bordered">
             <thead>
               <tr>
