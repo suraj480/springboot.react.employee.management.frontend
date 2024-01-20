@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import AddEmployeeWithNavigate from "./components/AddEmployee";
 import UpdateEmployeeComponent from "./components/UpdateEmployeeComponent";
 import ListEmployeeWithNavigate from "./components/ListEmployeeComponent";
+import ViewEmployeeComponent from "./components/ViewEmployeeComponent";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/listAllEmployees" element={<ListEmployeeWithNavigate />} />
             <Route path="/addEmployees" element={<AddEmployeeWithNavigate/>} />
             <Route path="/updateEmployees/:id"  element={<UpdateEmployeeComponent/>} />
+            <Route path="/viewEmployee/:id"  element={<ViewEmployeeComponent/>} />
           </Routes>
         </div>
         <FooterComponent />

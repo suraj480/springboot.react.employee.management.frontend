@@ -30,6 +30,9 @@ class ListEmployeeComponent extends Component {
     console.log("checkme",id)
     this.props.navigate(`/updateEmployees/${id}`);
   };
+  viewEmployee=(id)=>{
+    this.props.navigate(`/viewEmployee/${id}`); 
+  }
   render() {
     return (
       <div>
@@ -70,6 +73,15 @@ class ListEmployeeComponent extends Component {
                       className="btn btn-danger"
                     >
                       Delete
+                    </button>
+                  </td>
+                  <td>
+                    {" "}
+                    <button
+                      onClick={()=>this.viewEmployee(employee.id)}
+                      className="btn btn-info"
+                    >
+                      View
                     </button>
                   </td>
                 </tr>
